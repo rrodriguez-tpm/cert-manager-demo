@@ -2,9 +2,9 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: silly-demo
+  name: pharmacy-center
   labels:
-    app.kubernetes.io/name: silly-demo
+    app.kubernetes.io/name: pharmacy-center
 spec:
   rules:
     - http:
@@ -13,11 +13,11 @@ spec:
             pathType: ImplementationSpecific
             backend:
               service:
-                name: silly-demo
+                name: pharmacy-center
                 port:
                   number: 8080
-      host: app.silly-demo.com
+      host: pharmacycenter.io
   tls:
     - hosts:
-        - app.silly-demo.com
-      secretName: silly-demo
+        - pharmacycenter.io
+      secretName: pharmacy-center

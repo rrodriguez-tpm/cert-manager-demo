@@ -3,13 +3,13 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: silly-demo
+  name: pharmacy-center
 spec:
-  secretName: silly-demo
+  secretName: pharmacy-center
   issuerRef:
     kind: ClusterIssuer
     name: production
-  commonName: app.silly-demo.com
+  commonName: pharmacycenter.io
   dnsNames:
-  - app.silly-demo.com
+  - pharmacycenter.io
 

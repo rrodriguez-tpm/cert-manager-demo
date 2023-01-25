@@ -3,9 +3,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: silly-demo
+  name: pharmacy-center
   labels:
-    app.kubernetes.io/name: silly-demo
+    app.kubernetes.io/name: pharmacy-center
 spec:
   type: ClusterIP
   ports:
@@ -14,4 +14,4 @@ spec:
     protocol: TCP
     name: http
   selector:
-    app.kubernetes.io/name: silly-demo
+    app.kubernetes.io/name: pharmacy-center
