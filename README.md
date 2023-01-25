@@ -48,7 +48,7 @@ cat app/ing.yaml
 
 kubectl --namespace production apply --filename app
 
-echo "http://$SILLY_DEMO_ADDR"
+curl http://pharmacycenter.io
 ```
 
 ## Enable HTTPS Access Through cert-manager And Let's Encrypt
@@ -68,6 +68,8 @@ kubectl --namespace production apply --filename app
 
 kubectl --namespace production \
     get issuers,certificaterequests,certificates,orders,secrets
+
+curl http://pharmacycenter.io
 ```
 
 ## Uninstall k3s from a server node
