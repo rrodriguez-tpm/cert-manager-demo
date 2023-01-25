@@ -62,7 +62,9 @@ cat certificate.yaml
 kubectl --namespace production apply --filename certificate.yaml
 ```
 
-## Add `cert-manager.io/cluster-issuer: production` to `metadata.labels` in `app/ing.yaml`
+### Add `cert-manager.io/cluster-issuer: production` to `metadata.labels` in `app/ing.yaml`
+
+## Apply the changes:
 ```
 kubectl --namespace production apply --filename app
 
@@ -70,6 +72,12 @@ kubectl --namespace production \
     get issuers,certificaterequests,certificates,orders,secrets
 
 curl http://pharmacycenter.io
+```
+
+## When the application has been modified and needs to be deployed:
+```
+kubectl -n production delete -f app
+kubectl -n production apply -f app
 ```
 
 ## Uninstall k3s from a server node
